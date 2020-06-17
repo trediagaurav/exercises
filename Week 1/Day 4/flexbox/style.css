@@ -1,0 +1,28 @@
+.square {
+	width: 100px;
+	background-color: dodgerblue;
+	border: solid 2px navy;
+	color: black;
+	font-size: 40px;
+}
+
+#sq {
+	background-color: green;
+	flex: 2;
+}
+
+#sq2 {
+	background-color: green;
+	flex: 4;
+}
+
+#wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	height: 100%;
+}
+
+body {
+	height: 50vh;
+}
