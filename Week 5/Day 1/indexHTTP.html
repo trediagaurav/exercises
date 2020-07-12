@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <script>
+        const removeSpace = (str) => {
+            let return_text = "";
+            for(var i = 0; i < str.length; i++){
+                if (str[i]!=" "){
+                    return_text = return_text + str[i]
+                }
+            }
+            return return_text;
+        }
+
+    const validateForm = (param) => {
+        let text = param.q.value;
+        // text = text.trim();
+        text = removeSpace(text);
+        if(text.length>1){
+            param.q.value = text;
+            return true;
+        }
+        alert("no space please");
+        return false;
+    } 
+    
+    </script>
+
+    <form action="https://google.com/search"
+     target="_blank" 
+     onsubmit="return validateForm(this)"
+     type="GET">
+        
+    <input type="text" name="q" id="text" value="">
+    <input type="submit">
+    </form>
+    
+</body>
+</html>
