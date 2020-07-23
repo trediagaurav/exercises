@@ -1,0 +1,69 @@
+body{
+    background-color:whitesmoke;
+}
+#foo{
+    height: 225px;
+    width: 310px;
+    border-radius: 15px;
+    position: absolute;
+    top: 150px;
+    left: 600px;
+}
+.content{
+    height: 225px;
+    width: 310px;
+    border-radius: 15px;
+    position: absolute;
+    top: 480px;
+    left: 600px;
+    color: red;
+    text-align: center;
+}
+#dex{
+    position: relative;
+    top: 100px;
+}
+#logo{
+    position: relative;
+    bottom: 400px;
+}
+.circle{
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: green;
+    top: 550px;
+    left: 1050px;
+    outline: none; 
+}
+.left, .right{
+    position: absolute;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    outline: none; 
+    top: 573px;
+    left: 460px;
+    width: 40px;
+    height: 26px;
+}
+
+.left{
+    top: 573px;
+    left: 460px;
+    width: 40px;
+    height: 26px;
+    border: red solid 1px
+}
+.right{
+    top: 574px;
+    left: 523px;
+    width: 40px;
+    height: 26px;
+    border: red solid 1px
+}
+#img{
+    height: 225px;
+    width: 310px;
+}

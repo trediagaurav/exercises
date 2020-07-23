@@ -1,29 +1,11 @@
-// fetch('https://swapi.dev/api/people/1')
-// .then(response => response.json())
-// .then(console.log)
 
-// let get_info = () =>{
-//         let randomNumber = Math.floor(Math.random() * 83);
-//         const xhr = new XMLHttpRequest();
-//         xhr.open("GET", "https://swapi.dev/api/people/1", true);
-//         xhr.responseType = "json";
-//         xhr.onload = () => {
-//             if(xhr.status === 200){
-//                console.log(xhr.response + randomNumber + '/');
-//             } else{
-//                 console.log("problem Occured")
-//             }
-//         };
-//         xhr.send();     
-// };
-// get_info();
 let name = document.getElementById("name");
 let height = document.getElementById("height");
 let gender = document.getElementById("gender");
 let birth = document.getElementById("birth");
 let home = document.getElementById("home");
 
-let get_info = () =>{
+let get_info = () => {
     let randomNumber = Math.floor(Math.random() * 83);
     let apiUrl = "https://swapi.dev/api/people/" + randomNumber + '/';
     const xhr = new XMLHttpRequest();
@@ -31,13 +13,21 @@ let get_info = () =>{
     xhr.responseType = "json";
     xhr.onload = () => {
         if(xhr.status != 200){
-           console.log("Error !!!")
+        name.innerText = `Oh No! That person isn't available`;
+        height.innerText = ``;
+        gender.innerText = ``;
+        birth.innerText = ``;
         } else{
             updateInfo(xhr.response);
         }
     };
     xhr.send(); 
-           
+    function updateLoading() {
+        name.innerHTML = `<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i> <p>Loading...</p>`;
+        height.innerText = ``;
+        gender.innerText = ``;
+        birth.innerText = ``;
+    }     
 };
 get_info();
 
@@ -68,16 +58,3 @@ function updateInfo2(re){
     home.innerText =`Home: ${re.name}`;
 }
 
-function updateInfoError() {
-    name.innerText = `Oh No! That person isn't available`;
-    height.innerText = ``;
-    gender.innerText = ``;
-    birth.innerText = ``;
-}
-
-function updateLoading() {
-    name.innerHTML = `<i class="fas fa-spinner fa-pulse"></i> <p>Loading...</p>`;
-    height.innerText = ``;
-    gender.innerText = ``;
-    birth.innerText = ``;
-}
